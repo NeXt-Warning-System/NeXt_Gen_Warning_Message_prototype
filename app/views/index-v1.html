@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Waste carrier prototype
+{% endblock %}
+
+{% set versionxxx = "v1" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        NeXt Generation Warning System prototype
+      </h1>
+
+      <p><a href="/prototype-admin/clear-data">Clear permit data</a></p>
+      <!-- user lab -->
+      <h2 class="govuk-heading-m">Version 1</h2>
+
+      <p class="govuk-body">This version covers selecting issue severity and a target area.</br>
+      <p class="govuk-body">Week starting 28 January 2020. <!--the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table further down the page--></p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <!-- ########################################################################### -->
+      
+          <h2 class="govuk-heading-m">
+            Current research
+          </h2>
+      
+
+          <h3 class="govuk-heading-s">
+Select severity level          </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#" target="_blank">Button icon option</a> </li>
+            <li><a href="#" target="_blank">Radio select option</a> </li>
+          </ul>
+
+          <h3 class="govuk-heading-s">
+            Add target areas
+          </h3>
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li><a href="#">Auto complete search option</a></li>
+            <li><a href="#">Check box option</a></li>
+          </ul>
+          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <!-- ########################################################################### -->
+    
+           </div>
+              </div>
+
+            {% endblock %}
