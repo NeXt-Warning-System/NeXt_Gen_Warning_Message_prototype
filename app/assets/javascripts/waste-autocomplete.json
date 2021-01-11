@@ -1,0 +1,82 @@
+{
+  "country:AD": {
+    "edges": {
+      "from": [
+      ]
+    },
+    "meta": {
+      "canonical": true,
+      "canonical-mask": 1,
+      "display-name": true,
+      "stable-name": true
+    },
+    "names": {
+      "cy": false,
+      "en-GB": "Cadmium"
+    }
+  },
+  "country:AE": {
+    "edges": {
+      "from": [
+      ]
+    },
+    "meta": {
+      "canonical": true,
+      "canonical-mask": 1,
+      "display-name": true,
+      "stable-name": true
+    },
+    "names": {
+      "cy": false,
+      "en-GB": "Batteries (Lead-acid), whole or crushed"
+    }
+  },
+  "country:AZ": {
+    "edges": {
+      "from": [
+      ]
+    },
+    "meta": {
+      "canonical": true,
+      "canonical-mask": 1,
+      "display-name": true,
+      "stable-name": true
+    },
+    "names": {
+      "cy": false,
+      "en-GB": "Paper"
+    }
+  },
+  "country:AF": {
+    "edges": {
+      "from": [
+      ]
+    },
+    "meta": {
+      "canonical": true,
+      "canonical-mask": 1,
+      "display-name": true,
+      "stable-name": true
+    },
+    "names": {
+      "cy": false,
+      "en-GB": "Rubber, hard (e.g ebonite)"
+    }
+  },
+  "country:AH": {
+    "edges": {
+      "from": [
+      ]
+    },
+    "meta": {
+      "canonical": true,
+      "canonical-mask": 1,
+      "display-name": true,
+      "stable-name": true
+    },
+    "names": {
+      "cy": false,
+      "en-GB": "Mattress"
+    }
+  }
+}

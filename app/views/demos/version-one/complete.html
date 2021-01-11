@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Export not allowed
+      </h2>
+      <div class="govuk-panel__body">
+        The export of <strong>Cadmium</strong> to <strong>Angola</strong> is prohibited.
+      </div>
+      </br>
+      <p><a href="#" class="govuk-box-highlight-link">Print this page</a></p>
+    </div>
+{# 
+    <p>
+      We have sent you a confirmation email.
+    </p> #}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>For more information and advice on international waste shipments contact us on <a href="#" class="govuk-link">Askshipments@environment-agency.gov.uk</a>.</p>
+    
+    <h2 class="govuk-heading-m">Forms and guidance</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="https://www.gov.uk/government/publications/uk-plan-for-shipments-of-waste">UK plan for waste shipments</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="http://www.basel.int/Portals/4/Basel%20Convention/docs/text/BaselConventionText-e.pdf">Basel convention</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="http://www.oecd.org/environment/waste/30654501.pdf">OECD decision</a>
+      </li>
+    </ul>
+    
+    
+    <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+    <p><a href="what-do-you-want-to-export" class="govuk-button" title="Exit service">Start a new check</a></p>
+
+  </div>
+</div>
+{% endblock %}

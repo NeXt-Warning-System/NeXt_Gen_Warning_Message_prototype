@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Additional information needed
+      </h2>
+      <div class="govuk-panel__body">
+        The export of <strong>Rubber, hard (e.g ebonite)</strong> to <strong>Thailand</strong> requires additional information.
+      </div>
+      </br>
+      <p><a href="#" class="govuk-box-highlight-link">Print this page</a></p>
+    </div>
+{# 
+    <p>
+      We have sent you a confirmation email.
+    </p> #}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>More detailed information is needed to determine the controls needed to export Rubber, hard (e.g ebonite) to Thailand.</p>
+
+    <p>Contact the internationsal shipments team on <a href="#" class="govuk-link">Askshipments@environment-agency.gov.uk</a> for further guidance.</p>
+    
+    <h2 class="govuk-heading-m">Forms and guidence</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32007R1418">Regulation and amendmants</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://ec.europa.eu/trade/import-and-export-rules/export-from-eu/waste-shipment/questionnaires/#country-replies">Information provided by non-OECD countries</a>
+      </li>
+        <li>
+        <a class="govuk-link" href="https://ec.europa.eu/environment/waste/shipments/index.htm">European commission - shipments of wate</a>
+      </li>
+    </ul>
+    
+    
+    <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+    <p><a href="what-do-you-want-to-export" class="govuk-button" title="Exit service">Start a new check</a></p>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Select waste type
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+         {# {% include "../../includes/error-summary.html" %} #}
+
+  <h1 class="govuk-heading-xl">Metal wastes and waste consisting of alloys - A1010</h1>
+
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          idPrefix: "Selectwastetype",
+          name: "Selectwastetype",
+          fieldset: {
+            legend: {
+              text: 'Select waste type',
+              isPageHeading: false,
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          errorMessage: errors.Selectwastetype,   
+          items: [
+            {
+              value: "Antimony",
+              text: "Antimony"
+            },
+            {
+              value: "Arsenic",
+              text: "Arsenic"
+            },
+            {
+              value: "Beryllium",
+              text: "Beryllium"
+            },
+            {
+              value: "Cadmium",
+              text: "Cadmium"
+            },
+            {
+              value: "Lead",
+              text: "Lead"
+            },
+            {
+              value: "Mercury",
+              text: "Mercury"
+            },
+            {
+              value: "Selenium",
+              text: "Selenium"
+            },
+            {
+              value: "Tellurium",
+              text: "Tellurium"
+            },
+            {
+              value: "Thallium",
+              text: "Thallium"
+            }
+          ]
+        }) }}
+
+        <input class="govuk-button" type="submit" value="Continue">
+        <p><a href="what-do-you-want-to-export" class="govuk-link">Search again</a></p>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

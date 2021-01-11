@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Confirm waste
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+   <h1 class="govuk-heading-xl">Confirm waste</h1>
+
+   <p>You have selected <strong>Batteries (Lead-acid), whole or crushed</strong> waste code <strong>A1160</strong></p>
+   
+   
+   <p>is this correct?</p>
+
+    <a class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" href="where-are-you-exporting-to" role="button">Yes continue</a>
+    <p><a href="what-do-you-want-to-export" class="govuk-link">No search again</a></p>
+
+
+      {# <form class="form"  method="post">
+
+        {{ govukRadios({
+          idPrefix: "Selectwastetype",
+          name: "Selectwastetype",
+          fieldset: {
+            legend: {
+              text: 'Select metal type',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          errorMessage: errors.Selectwastetype,   
+          items: [
+            {
+              value: "Metal wastes and waste consisiting of alloys of any of the following - A1010",
+              text: "Metal wastes and waste consisiting of alloys of any of the following - A1010"
+            },
+            {
+              value: "Waste having as constitamunants, excluding metal waste in - A1020",
+              text: "Waste having as constitamunants, excluding metal waste in - A1020"
+            },
+            {
+              value: "Magneseium waste and scrap that is flamible, pyrophoric or emits, upon contact with water, flammable gasses in dangerous quantitiies - AA190 ",
+              text: "Magneseium waste and scrap that is flamible, pyrophoric or emits, upon contact with water, flammable gasses in dangerous quantitiies - AA190 "
+            },
+            {
+              value: "Metal and metal alloy wastes in metalic non-dispersable - B1010",
+              text: "Metal and metal alloy wastes in metalic non-dispersable - B1010"
+            },
+            {
+              value: "Clean uncontaminated metal scrap including alloys in bulk finished form - B1020",
+              text: "Clean uncontaminated metal scrap including alloys in bulk finished form - B1020"
+            }
+          ]
+        }) }}
+
+        <p><a href="what-do-you-want-to-export" class="govuk-link">Search again</a></p>
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form> #}
+
+    </div>
+  </div>
+{% endblock %}

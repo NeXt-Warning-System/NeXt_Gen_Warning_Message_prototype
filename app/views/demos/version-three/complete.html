@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Controlled export
+      </h2>
+      <div class="govuk-panel__body">
+        The export of <strong>Batteries (Lead-acid), whole or crushed</strong> to <strong>Germany</strong> is controlled.
+      </div>
+      </br>
+      <p><a href="#" class="govuk-box-highlight-link">Print this page</a></p>
+    </div>
+{# 
+    <p>
+      We have sent you a confirmation email.
+    </p> #}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>This import is subject to notification controls.</p>
+
+    <p>Before moving the waste you must:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>get permission from the regulatory authorities in England and Germany</li>
+      <li>have a financial guarantee in place to make sure money is available to return waste should something go wrong</li>
+      <li>have liability insurance in place</li>
+      <li>draw up a contract for the recovery of the waste</li>
+      <li>pay a <a href="#">fee to the Environment Agency</a></li>
+    </ul>
+
+    <p>For more information and advice on international waste shipments contact us on <a href="#" class="govuk-link">Askshipments@environment-agency.gov.uk</a>.</p>
+    
+    <h2 class="govuk-heading-m">Forms and guidance</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="https://www.gov.uk/government/publications/the-waste-batteries-and-accumulators-regulations-2009-guidance-notes">Waste batteries</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://www.gov.uk/guidance/importing-and-exporting-waste#notification-controls-how-to-comply">Notification controls</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32008R0669">Guidance on annex 1C</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://www.gov.uk/government/publications/application-for-approval-of-financial-guarantee-or-equivalent-insurance">Financial guarantee form</a>
+      </li>
+    </ul>
+    
+    
+    <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+    <p><a href="what-do-you-want-to-export" class="govuk-button" title="Exit service">Start a new check</a></p>
+
+  </div>
+</div>
+{% endblock %}

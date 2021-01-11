@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  where-are-you-exporting-to
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {# <h1 class="govuk-heading-xl">
+        Heading or question goes here
+      </h1> #}
+
+       {# {% include "../../includes/error-summary.html" %} #}
+
+
+     {# {% for fieldName, error in errors %}
+          <li>
+            <a href="#{{ fieldName }}">
+              {{ error.msg }}
+            </a>
+          </li>
+        {% endfor %} #}
+        
+
+      <form class="form"  method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Where are you exporting to?
+          </h1>
+        </legend>
+
+        {# {{ govukInput({
+          label: {
+            text: "Select country "
+          },
+          hint: {
+            text: ""
+          },
+          id: "where-are-you-exporting-to ",
+          name: "where-are-you-exporting-to",
+          value: where-are-you-exporting-toValue,
+          attributes : {
+            autocomplete: "off"
+         },
+         errorMessage: errors.where-are-you-exporting-to
+        }) }} #}
+
+        {{autocompleteCountry({
+        label: 'Select country', 
+        width: "govuk-!-width-full",
+        name: "product[country]",
+        labelClasses:    "govuk-fieldset__legend--s govuk-!-margin-bottom-1",
+        value: theProduct.country
+      })}}
+      
+      </fieldset>
+        <input class="govuk-button" type="submit" value="Continue">
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

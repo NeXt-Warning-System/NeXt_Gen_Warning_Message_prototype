@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What do you want to export?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {# <h1 class="govuk-heading-xl">
+        Heading or question goes here
+      </h1> #}
+
+         {# {% include "../../includes/error-summary.html" %} #} 
+
+
+     {# {% for fieldName, error in errors %}
+          <li>
+            <a href="#{{ fieldName }}">
+              {{ error.msg }}
+            </a>
+          </li>
+        {% endfor %} #}
+        
+
+      <form class="form"  method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            What do you want to export?
+          </h1>
+        </legend>
+
+        {# {{ govukInput({
+          label: {
+            text: "Select waste"
+          },
+          hint: {
+            text: ""
+          },
+          id: "Selectwaste ",
+          name: "Selectwaste",
+          value: SelectwasteValue,
+          attributes : {
+            autocomplete: "off"
+         },
+         errorMessage: errors.Selectwaste
+        }) }}
+ #}
+
+
+      {{autocompleteWaste({
+        label: 'Select waste', 
+        hint: 'Type the name of the waste you want to export. For example Copper',
+        width: "govuk-!-width-full",
+        name: "waste",
+        labelClasses:    "govuk-fieldset__legend--s govuk-!-margin-bottom-1",
+        value: [theProduct.waste]
+      })}} 
+
+
+      
+      </fieldset>
+        <input class="govuk-button" type="submit" value="Continue">
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+

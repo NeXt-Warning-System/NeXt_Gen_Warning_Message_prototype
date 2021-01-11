@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Select rubber type
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+         {# {% include "../../includes/error-summary.html" %} #}
+
+       <h1 class="govuk-heading-xl">Rubber wastes - B3040</h1>
+
+       {# <p class="govuk-body">Metal wastes and waste consisiting of alloys of any of the following - A1010</p> #}
+
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          idPrefix: "Selectwastetype",
+          name: "Selectwastetype",
+          fieldset: {
+            legend: {
+              text: 'Select rubber type',
+              isPageHeading: false,
+              classes: 'govuk-fieldset__legend--s'
+            }
+          },
+          errorMessage: errors.Selectwastetype,   
+          items: [
+            {
+              value: "Paper, paperboard or paperboard (unbleached) ",
+              text: "Paper, paperboard or paperboard (unbleached) "
+            },
+            {
+              value: "Paper or paperboard made mainly of bleached chemical pulp, not coloured in the mass",
+              text: "Paper or paperboard made mainly of bleached chemical pulp, not coloured in the mass"
+            },
+          ]
+        }) }}
+        <input class="govuk-button" type="submit" value="Continue">
+        <p><a href="what-do-you-want-to-export" class="govuk-link">Search again</a></p>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

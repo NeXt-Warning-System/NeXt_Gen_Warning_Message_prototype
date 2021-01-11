@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Additional controls
+      </h2>
+      <div class="govuk-panel__body">
+        The export of <strong>paper, paperboard or paperboard (unbleached)</strong> to <strong>Belgium</strong> has additional controls.
+      </div>
+      </br>
+      <p><a href="#" class="govuk-box-highlight-link">Print this page</a></p>
+    </div>
+{# 
+    <p>
+      We have sent you a confirmation email.
+    </p> #}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>Belgium is likely to have additional controls.</p>
+
+    <p>Before moving the waste you must:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>complete an <a class="govuk-link" href="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2013:079:0019:0023:EN:PDF">Annex VII</a> from and send with the waste</li>
+      <li>have a contract between both parties for the recovery of the waste </li>
+      <li>ensure the waste is dealt with in an environmentally sound manner</li>
+      <li>ensure waste is treated using techniques equivalent to those used within the European union</li>
+    </ul>
+
+    <p>For more information and advice on international waste shipments contact us on <a href="#" class="govuk-link">Askshipments@environment-agency.gov.uk</a>.</p>
+    
+    <h2 class="govuk-heading-m">Forms and guidance</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="https://www.gov.uk/guidance/importing-and-exporting-waste#import-or-export-article-18-controls">Article 18 controls</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2013:079:0019:0023:EN:PDF">Annex VII</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32006R1013">Waste shipment regulation</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="https://www.gov.uk/guidance/packaging-waste-apply-to-be-an-accredited-reprocessor-or-exporter">Packaging waste</a>
+      </li>
+    </ul>
+    
+    
+    <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+    <p><a href="what-do-you-want-to-export" class="govuk-button" title="Exit service">Start a new check</a></p>
+
+  </div>
+</div>
+{% endblock %}
