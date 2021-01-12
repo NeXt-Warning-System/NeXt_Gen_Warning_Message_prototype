@@ -1,6 +1,20 @@
 const express = require('express')
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
+router.use(function (req, res, next) {
+    res.locals.hostname=process.env.THISHOST
+    next()
+  });
 
-module.exports = router
+// Add your routes here - above the module.exports line
+// all routes for registration v1
+router.use('/v1', require('./routes_v1'))
+
+
+// Route index page
+router.get('/', function (req, res) {
+    res.render('index')
+  })
+
+
+  module.exports = router
