@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+         Prototype
+      </h1>{{releaseVersion | log }}
+      
+     
+
+      <h2 class="govuk-heading-m">Journeys</h2>
+
+      
+
+    
+      <ul class="govuk-list govuk-list--bullet">
+       <li><a href="/demos/version-one/start">Metal</a></li>
+        <li><a href="/demos/version-two/start">Cadmium</a></li>
+        <li><a href="/demos/version-three/start">Batteries</a></li>
+        <li><a href="/demos/version-four/start">Paper</a></li>
+        <li><a href="/demos/version-five/start">Rubber</a></li>
+        <li><a href="/demos/version-six/start">Mattresses</a></li>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}
