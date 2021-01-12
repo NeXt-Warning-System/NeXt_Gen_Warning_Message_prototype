@@ -2,52 +2,33 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  NeXt Generation Warning System prototype
+ Prototype
 {% endblock %}
-{% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
-  alpha
-</strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your
-      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
 
-{% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <h1 class="govuk-heading-xl">
-        NeXt Generation Warning System prototype
-      </h1>
-      <p class="govuk-body-l">This is not an end to end service prototype.</p>
-      <p class="govuk-body">This prototype is for testing the message creation part of the NeXt Generation Warning System. <!--the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table further down the page--></p>
+         Prototype
+      </h1>{{releaseVersion | log }}
+      
+     
 
-
-
-<p class="govuk-body">
-  <a href="/prototype-admin/clear-data">Clear stored data</a> 
-</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <!-- ########################################################################### -->
+      <h2 class="govuk-heading-m">Journeys</h2>
 
       
+
+    
       <ul class="govuk-list govuk-list--bullet">
-    <li><a href="/index-v1">Version 1</a></li>
-
+       <li><a href="/demos/version-one/start">Metal</a></li>
+        <li><a href="/demos/version-two/start">Cadmium</a></li>
+        <li><a href="/demos/version-three/start">Batteries</a></li>
+        <li><a href="/demos/version-four/start">Paper</a></li>
+        <li><a href="/demos/version-five/start">Rubber</a></li>
+        <li><a href="/demos/version-six/start">Mattresses</a></li>
       </ul>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <!-- ########################################################################### -->
-      
-      
     </div>
-  </div>
+</div>
 
 {% endblock %}
