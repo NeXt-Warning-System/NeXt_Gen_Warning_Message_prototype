@@ -35,18 +35,15 @@ Select the target area for the alert
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-                            Select the target area for the alert
+                            Add the target area
                         </h1>
                     </legend>
-                   <span id="last-target-area-hint" class="govuk-body">
-                      Start entering a target area below and then choose from the options provided.<br><br> 
-						
-                    </span>
+
 					
 					
 					<fieldset class="govuk-fieldset">
 					<label class="govuk-label" for="target-area">
-					  Target area
+            Use the area code or area name to find a target area for this flood alert.						
 					</label>
 			          <div id="target-area-container" name="target-area"></div>
 			        </fieldset>
@@ -57,7 +54,19 @@ Select the target area for the alert
 	                </fieldset>
 
         </form>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I can not find the flood target area that I am looking for
+            </span>
+          </summary>
 
+          <p>Check that the target area you are looking for issues flood alerts, and is within your Duty Officer area.</br></br>
+
+            Only relevant target areas to the severity level and Duty Officer are available.
+            </p>
+
+          </details>
     </div>
 </div>
 
@@ -317,7 +326,7 @@ Select the target area for the alert
 
 {% block bodyEnd %}
 <div class="proto-action" style="bottom: 110px">
-  <a href="https://deloittedigitaluk.invisionapp.com/share/G3ZUZ8GA2UB#/screens/441755757" target="_blank">
+  <a href="#" target="_blank">
     <div class="proto-action-text govuk-!-margin-left-3">Option 2</div>
   </a>
 </div>
