@@ -20,7 +20,7 @@ Select the target area for the alert
 {% endblock %}
 
 {% block content %}
-{# permit|dump #}
+{{ permit|dump }}
 
 {% set appType = 'area' %}
 {% if permit.area=="solentsouthdowns" %}

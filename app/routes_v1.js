@@ -30,97 +30,101 @@ router.use(function (req, res, next) {
     res.locals.serviceName=servicename
     // permit and autostore data set in all statement at bottom
     res.locals.permit=res.locals.data
-  
+      console.log(res.locals.permit)
+  // var words = res.locals.permit.targetareaautocomplete.split(' ')
+  // res.locals.taCode = words[words.length - 1]
+ //  res.locals.taName = words.slice(0, words.length - 2)
     next()
   });
   
-       // set up redirect for letter testing
+       // set up redirect for target area
+  
        router.get('/autocomplete-devoncornwall', function (req, res) {
         req.session.data = { area: 'devoncornwall' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-       // set up redirect for letter testing
+       // set up redirect for target area
        router.get('/autocomplete-solentsouthdowns', function (req, res) {
         req.session.data = { area: 'solentsouthdowns' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-       // set up redirect for letter testing
+       // set up redirect for target area
        router.get('/autocomplete-devoncornwallios', function (req, res) {
         req.session.data = { area: 'devoncornwallios' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
       
-       // set up redirect for letter testing
+       // set up redirect for target area
        router.get('/autocomplete-cumbrialancashirelanc', function (req, res) {
         req.session.data = { area: 'cumbrialancashirelanc' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-       // set up redirect for letter testing
+       // set up redirect for target area
        router.get('/autocomplete-cumbrialancashirecumb', function (req, res) {
         req.session.data = { area: 'cumbrialancashirecumb' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-        // set up redirect for letter testing
+        // set up redirect for target area
        router.get('/autocomplete-yorkshiresouthwest', function (req, res) {
         req.session.data = { area: 'yorkshiresouthwest' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-        // set up redirect for letter testing
+        // set up redirect for target area
        router.get('/autocomplete-yorkshirenortheast', function (req, res) {
         req.session.data = { area: 'yorkshirenortheast' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-       // set up redirect for letter testing
+       // set up redirect for target area
        router.get('/autocomplete-eastangliacb', function (req, res) {
         req.session.data = { area: 'eastangliacb' }
         res.redirect(`/v1/target-area/autocomplete`)
       })
 
-        // set up redirect for letter testing
+        // set up redirect for target area
         router.get('/autocomplete-eastangliaens', function (req, res) {
         req.session.data = { area: 'eastangliaens' }
         res.redirect(`/v1/target-area/autocomplete`)
        })
 
-        // set up redirect for letter testing
+        // set up redirect for target area
         router.get('/autocomplete-eastmidlands', function (req, res) {
           req.session.data = { area: 'eastmidlands' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
          
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-gtrmancsmerseyches', function (req, res) {
          req.session.data = { area: 'gtrmancsmerseyches' }
          res.redirect(`/v1/target-area/autocomplete`)
         })
             
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-hertsnorthlondon', function (req, res) {
           req.session.data = { area: 'hertsnorthlondon' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
              
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-kentslondonesussex', function (req, res) {
           req.session.data = { area: 'kentslondonesussex' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
          
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-lincsnorthland', function (req, res) {
           req.session.data = { area: 'lincsnorthland' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
          
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-northeast', function (req, res) {
           req.session.data = { area: 'northeast' }
           res.redirect(`/v1/target-area/autocomplete`)
@@ -128,7 +132,7 @@ router.use(function (req, res, next) {
          
 
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-thames', function (req, res) {
           req.session.data = { area: 'thames' }
           res.redirect(`/v1/target-area/autocomplete`)
@@ -136,14 +140,14 @@ router.use(function (req, res, next) {
          
 
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-wessexnorth', function (req, res) {
           req.session.data = { area: 'wessexnorth' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
          
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-wessexsouth', function (req, res) {
           req.session.data = { area: 'wessexsouth' }
           res.redirect(`/v1/target-area/autocomplete`)
@@ -151,19 +155,28 @@ router.use(function (req, res, next) {
          
 
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-westmidlandseast', function (req, res) {
           req.session.data = { area: 'westmidlandseast' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
          
 
-         // set up redirect for letter testing
+         // set up redirect for target area
          router.get('/autocomplete-westmidlandswest', function (req, res) {
           req.session.data = { area: 'westmidlandswest' }
           res.redirect(`/v1/target-area/autocomplete`)
          })
          
+
+
+// select target area ========================================================
+
+router.get('/target-area/autocomplete', function (req, res) {
+  res.render(folder + '/target-area/autocomplete',{
+      "formAction":"/"+ folder + "/target-area/review"
+  })
+})
 
 
 
