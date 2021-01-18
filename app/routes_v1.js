@@ -177,6 +177,12 @@ router.get('/target-area/autocomplete', function (req, res) {
       "formAction":"/"+ folder + "/target-area/review"
   })
 })
+router.get('/target-area/review', function (req, res) {
+  const words = res.locals.data.targetareaautocomplete.split(' ')
+  const taCode = words.slice(-1)
+  const taName = words.slice(0, -1).join(' ')
+  res.render(folder + '/target-area/review', { taCode, taName })
+})
 
 
 
