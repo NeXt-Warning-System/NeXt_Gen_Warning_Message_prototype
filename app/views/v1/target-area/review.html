@@ -16,6 +16,7 @@ Select the target area for the alert
       </span>
     </p>
   </div>
+  {{backlink|safe}}
 
 {% endblock %}
 
@@ -26,15 +27,15 @@ Select the target area for the alert
 {% if permit.area=="solentsouthdowns" %}
     {% set appType = 'solentsouthdowns' %}
 {% endif %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-       <form action="/next" method="post">
+       <form action="javascript:history.back()" method="post">
 
                         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
                             Review target area
                         </h1>
-                      </br>      </br> 
+                      
 					
           {% set words = permit.targetareaautocomplete.split(" ") %}
           {% set areaCode = words|last %}
@@ -50,18 +51,21 @@ Select the target area for the alert
           </h3>
           <p>{{ areaCode }}</p>
 
-
+<!--
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Map            
+              View map for target area           
             </span>
           </summary>
 
           <p>Map goes here</p>
 
           </details>
-          <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+          -->
+          <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">Continue</button> 
+
         </form>
     </div>
 </div>

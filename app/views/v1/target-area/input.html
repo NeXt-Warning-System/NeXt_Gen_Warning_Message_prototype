@@ -30,6 +30,10 @@ Select the target area for the alert
     <div class="govuk-grid-column-two-thirds">
 
       <form action="/{{versionxxx}}/target-area/review" method="post">
+        {% if permit.error=="yes" %}
+        {% include "v1/details/error_target_area.html" %}
+        {% endif %}
+
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -42,11 +46,13 @@ Select the target area for the alert
 					
 					
 					<fieldset class="govuk-fieldset">
-					<label class="govuk-label" for="target-area">
-            Add the area code or area name to find a target area for this flood alert.						
-					</label>
 
-          <input class="govuk-input" id="target-area" name="target-area" type="text">
+
+            {% if permit.error=="yes" %}
+            {% include "v1/details/error_target_area2.html" %}
+            {% else %}
+            {% include "v1/details/noerror_target_area2.html" %}
+            {% endif %}
 
 
         </fieldset>
@@ -57,19 +63,7 @@ Select the target area for the alert
 	                </fieldset>
 
         </form>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              I can not find the flood target area that I am looking for
-            </span>
-          </summary>
 
-          <p>Check that the target area you are looking for issues flood alerts, and is within your Duty Officer area.</br></br>
-
-            Only relevant target areas to the severity level and Duty Officer are available.
-            </p>
-
-          </details>
     </div>
 </div>
 
