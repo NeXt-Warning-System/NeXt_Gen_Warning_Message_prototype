@@ -177,6 +177,19 @@ router.get('/target-area/autocomplete', function (req, res) {
       "formAction":"/"+ folder + "/target-area/review"
   })
 })
+router.get('/target-area/review', function (req, res) {
+  const words = res.locals.data.targetareaautocomplete.split(' ')
+  const code = words.slice(-1)[0]
+  const name = words.slice(0, -1).join(' ')
+  const targetArea = { code, name }
+
+  // assign targetArea to locals if subsequent pages need the target area
+  // res.locals.targetArea = targetArea
+  // res.render(folder + '/target-area/review')
+
+  // pass targetArea to view if only needed for this view
+  res.render(folder + '/target-area/review', { targetArea })
+})
 
 
 
