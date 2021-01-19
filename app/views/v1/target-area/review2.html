@@ -35,11 +35,6 @@ Select the target area for the alert
                         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
                             Review target area
                         </h1>
-                      
-					
-          {% set words = permit.targetareaautocomplete.split(" ") %}
-          {% set areaCode = words|last %}
-          {% set name = words|reject("eq", areaCode)|join(" ") %}
 
 					<h3 class="govuk-heading-m govuk-!-margin-bottom-4">
             Target area name

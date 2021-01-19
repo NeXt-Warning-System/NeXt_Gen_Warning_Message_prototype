@@ -22,15 +22,12 @@ Select the target area for the alert
 {% block content %}
 {# permit|dump #}
 
-{% set appType = 'area' %}
-{% if permit.area=="solentsouthdowns" %}
-    {% set appType = 'solentsouthdowns' %}
-{% endif %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/{{versionxxx}}/target-area/review" method="post">
-        {% if permit.error=="yes" %}
+      <form action="/{{versionxxx}}/target-area/review2" method="post">
+        {% if permit.targetArea=="error" %}
         {% include "v1/details/error_target_area.html" %}
         {% endif %}
 
@@ -48,7 +45,7 @@ Select the target area for the alert
 					<fieldset class="govuk-fieldset">
 
 
-            {% if permit.error=="yes" %}
+            {% if permit.targetArea=="error" %}
             {% include "v1/details/error_target_area2.html" %}
             {% else %}
             {% include "v1/details/noerror_target_area2.html" %}
