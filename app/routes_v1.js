@@ -192,7 +192,46 @@ router.get('/target-area/review', function (req, res) {
 })
 
 
+// Target Area input validation page 1 ==============================================================
 
+router.get('/target-area/input', function (req, res) {
+  res.render(folder + '/target-area/input',{
+      "formAction":"/"+ folder + "/target-area/inputredirect"
+  })
+})
+
+// Route to check
+router.post('/target-area/inputredirect', function (req, res) {
+
+var targetArea = res.locals.data.targetArea
+
+if (targetArea === '123WAF988') {
+    res.redirect("/"+ folder + "/target-area/review2")
+} else {
+    res.redirect("/"+ folder + "/target-area/input-error")
+  }
+})
+
+
+// Target Area input validation page 1 ==============================================================
+
+router.get('/target-area/input-error', function (req, res) {
+  res.render(folder + '/target-area/input-error',{
+      "formAction":"/"+ folder + "/target-area/inputredirect"
+  })
+})
+
+// Route to check
+router.post('/target-area/inputredirect', function (req, res) {
+
+var targetArea = res.locals.data.targetArea
+
+if (targetArea === '123WAF988') {
+    res.redirect("/"+ folder + "/target-area/review2")
+} else {
+    res.redirect("/"+ folder + "/target-area/input-error")
+  }
+})
 
 
 
