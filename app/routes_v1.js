@@ -30,158 +30,25 @@ router.use(function (req, res, next) {
     res.locals.serviceName=servicename
     // permit and autostore data set in all statement at bottom
     res.locals.permit=res.locals.data
-      console.log(res.locals.permit)
-  // var words = res.locals.permit.targetareaautocomplete.split(' ')
-  // res.locals.taCode = words[words.length - 1]
- //  res.locals.taName = words.slice(0, words.length - 2)
     next()
   });
-  
-       // set up redirect for target area
-  
-       router.get('/autocomplete-devoncornwall', function (req, res) {
-        req.session.data = { area: 'devoncornwall' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-       // set up redirect for target area
-       router.get('/autocomplete-solentsouthdowns', function (req, res) {
-        req.session.data = { area: 'solentsouthdowns' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-       // set up redirect for target area
-       router.get('/autocomplete-devoncornwallios', function (req, res) {
-        req.session.data = { area: 'devoncornwallios' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-      
-       // set up redirect for target area
-       router.get('/autocomplete-cumbrialancashirelanc', function (req, res) {
-        req.session.data = { area: 'cumbrialancashirelanc' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-       // set up redirect for target area
-       router.get('/autocomplete-cumbrialancashirecumb', function (req, res) {
-        req.session.data = { area: 'cumbrialancashirecumb' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-        // set up redirect for target area
-       router.get('/autocomplete-yorkshiresouthwest', function (req, res) {
-        req.session.data = { area: 'yorkshiresouthwest' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-        // set up redirect for target area
-       router.get('/autocomplete-yorkshirenortheast', function (req, res) {
-        req.session.data = { area: 'yorkshirenortheast' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-       // set up redirect for target area
-       router.get('/autocomplete-eastangliacb', function (req, res) {
-        req.session.data = { area: 'eastangliacb' }
-        res.redirect(`/v1/target-area/autocomplete`)
-      })
-
-        // set up redirect for target area
-        router.get('/autocomplete-eastangliaens', function (req, res) {
-        req.session.data = { area: 'eastangliaens' }
-        res.redirect(`/v1/target-area/autocomplete`)
-       })
-
-        // set up redirect for target area
-        router.get('/autocomplete-eastmidlands', function (req, res) {
-          req.session.data = { area: 'eastmidlands' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-         // set up redirect for target area
-         router.get('/autocomplete-gtrmancsmerseyches', function (req, res) {
-         req.session.data = { area: 'gtrmancsmerseyches' }
-         res.redirect(`/v1/target-area/autocomplete`)
-        })
-            
-         // set up redirect for target area
-         router.get('/autocomplete-hertsnorthlondon', function (req, res) {
-          req.session.data = { area: 'hertsnorthlondon' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-             
-         // set up redirect for target area
-         router.get('/autocomplete-kentslondonesussex', function (req, res) {
-          req.session.data = { area: 'kentslondonesussex' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-         // set up redirect for target area
-         router.get('/autocomplete-lincsnorthland', function (req, res) {
-          req.session.data = { area: 'lincsnorthland' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-         // set up redirect for target area
-         router.get('/autocomplete-northeast', function (req, res) {
-          req.session.data = { area: 'northeast' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-
-         // set up redirect for target area
-         router.get('/autocomplete-thames', function (req, res) {
-          req.session.data = { area: 'thames' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-
-         // set up redirect for target area
-         router.get('/autocomplete-wessexnorth', function (req, res) {
-          req.session.data = { area: 'wessexnorth' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-         // set up redirect for target area
-         router.get('/autocomplete-wessexsouth', function (req, res) {
-          req.session.data = { area: 'wessexsouth' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-
-         // set up redirect for target area
-         router.get('/autocomplete-westmidlandseast', function (req, res) {
-          req.session.data = { area: 'westmidlandseast' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-         // set up redirect for target area
-         router.get('/autocomplete-westmidlandswest', function (req, res) {
-          req.session.data = { area: 'westmidlandswest' }
-          res.redirect(`/v1/target-area/autocomplete`)
-         })
-         
-
-
-// select target area ========================================================
 
 router.get('/target-area/autocomplete', function (req, res) {
+  res.locals.targetAreas = JSON.stringify(require('./data/target-areas').data)
   res.render(folder + '/target-area/autocomplete',{
       "formAction":"/"+ folder + "/target-area/review"
   })
 })
-router.get('/target-area/review', function (req, res) {
-  const words = res.locals.data.targetareaautocomplete.split(' ')
+
+function getTargetArea(taString) {
+  const words = taString.split(' ')
   const code = words.slice(-1)[0]
   const name = words.slice(0, -1).join(' ')
-  const targetArea = { code, name }
+  return { code, name }
+}
+
+router.post('/target-area/review', function (req, res) {
+  const targetArea = getTargetArea(res.locals.data.targetareaautocomplete)
 
   // assign targetArea to locals if subsequent pages need the target area
   // res.locals.targetArea = targetArea
@@ -191,49 +58,15 @@ router.get('/target-area/review', function (req, res) {
   res.render(folder + '/target-area/review', { targetArea })
 })
 
+router.post('/target-area/review-input', function (req, res) {
+  const targetAreas = require('./data/target-areas').data
+  const targetArea = targetAreas.map(ta => getTargetArea(ta)).find(ta => ta.code === res.locals.data['target-area'])
 
-// Target Area input validation page 1 ==============================================================
-
-router.get('/target-area/input', function (req, res) {
-  res.render(folder + '/target-area/input',{
-      "formAction":"/"+ folder + "/target-area/inputredirect"
-  })
-})
-
-// Route to check
-router.post('/target-area/inputredirect', function (req, res) {
-
-var targetArea = res.locals.data.targetArea
-
-if (targetArea === '123WAF988') {
-    res.redirect("/"+ folder + "/target-area/review2")
-} else {
-    res.redirect("/"+ folder + "/target-area/input-error")
+  if (targetArea) {
+    res.render(folder + '/target-area/review', { targetArea })
+  } else {
+    res.render(folder + '/target-area/error', { targetArea })
   }
 })
 
-
-// Target Area input validation page 1 ==============================================================
-
-router.get('/target-area/input-error', function (req, res) {
-  res.render(folder + '/target-area/input-error',{
-      "formAction":"/"+ folder + "/target-area/inputredirect"
-  })
-})
-
-// Route to check
-router.post('/target-area/inputredirect', function (req, res) {
-
-var targetArea = res.locals.data.targetArea
-
-if (targetArea === '123WAF988') {
-    res.redirect("/"+ folder + "/target-area/review2")
-} else {
-    res.redirect("/"+ folder + "/target-area/input-error")
-  }
-})
-
-
-
-
-         module.exports = router
+module.exports = router

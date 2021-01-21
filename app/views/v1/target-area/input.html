@@ -27,9 +27,7 @@ Select the target area for the alert
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="{{formAction}}" novalidate>
-     
-
+      <form action="/{{versionxxx}}/target-area/review-input" method="post">
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -42,10 +40,10 @@ Select the target area for the alert
 					
 					
 					<fieldset class="govuk-fieldset">
-
-          {% include "v1/details/noerror_target_area2.html" %}
-
-
+            <label class="govuk-label" for="targetArea">
+              Use the area code to find a target area for flood warnings.						
+            </label>
+            <input class="govuk-input" id="targetArea" name="targetArea" type="text">
 
         </fieldset>
 						
