@@ -32,6 +32,10 @@ gulp.task('server', function () {
   nodemon({
     watch: ['.env', '**/*.js', '**/*.json'],
     script: 'listen-on-port.js',
+    ext: 'js',
+    execMap: {
+      js: 'node --inspect-brk'
+    },
     ignore: [
       config.paths.public + '*',
       config.paths.assets + '*',
