@@ -40,7 +40,7 @@ router.get('/target-area/autocomplete', function (req, res) {
   })
 })
 
-function getTargetArea(taString) {
+function getTargetArea (taString) {
   const words = taString.split(' ')
   const code = words.slice(-1)[0]
   const name = words.slice(0, -1).join(' ')
@@ -48,14 +48,15 @@ function getTargetArea(taString) {
 }
 
 router.post('/target-area/review', function (req, res) {
-  const targetArea = getTargetArea(res.locals.data.targetareaautocomplete)
+  const targetAreas = require('./data/target-areas').data
+  const targetAreaString = targetAreas.find(ta => ta === res.locals.data.targetareaautocomplete)
 
-  // assign targetArea to locals if subsequent pages need the target area
-  // res.locals.targetArea = targetArea
-  // res.render(folder + '/target-area/review')
-
-  // pass targetArea to view if only needed for this view
-  res.render(folder + '/target-area/review', { targetArea })
+  if (targetAreaString) {
+    const targetArea = getTargetArea(targetAreaString)
+    res.render(folder + '/target-area/review', { targetArea })
+  } else {
+    res.render(folder + '/target-area/error', { targetArea: { name: targetAreaString } })
+  }
 })
 
 router.post('/target-area/review-input', function (req, res) {
