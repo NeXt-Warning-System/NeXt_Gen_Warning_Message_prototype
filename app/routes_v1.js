@@ -40,6 +40,20 @@ router.get('/target-area/autocomplete', function (req, res) {
   })
 })
 
+router.get('/target-area/autocomplete-error', function (req, res) {
+  res.locals.targetAreas = JSON.stringify(require('./data/target-areas').data)
+  res.render(folder + '/target-area/autocomplete-error',{
+      "formAction":"/"+ folder + "/target-area/review"
+  })
+})
+
+router.get('/target-area/review', function (req, res) {
+  res.locals.targetAreas = JSON.stringify(require('./data/target-areas').data)
+  res.render(folder + '/target-area/autocomplete-error',{
+      "formAction":"/"+ folder + "/target-area/review"
+  })
+})
+
 function getTargetArea (taString) {
   const words = taString.split(' ')
   const code = words.slice(-1)[0]
@@ -55,7 +69,7 @@ router.post('/target-area/review', function (req, res) {
     const targetArea = getTargetArea(targetAreaString)
     res.render(folder + '/target-area/review', { targetArea })
   } else {
-    res.render(folder + '/target-area/error', { targetArea: { name: targetAreaString } })
+    res.render(folder + '/target-area/autocomplete-error', { targetArea: { name: targetAreaString } })
   }
 })
 

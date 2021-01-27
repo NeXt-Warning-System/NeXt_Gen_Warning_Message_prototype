@@ -16,6 +16,7 @@ Select the target area for the alert
       </span>
     </p>
   </div>
+  {{backlink|safe}}
 
 {% endblock %}
 
@@ -54,12 +55,14 @@ Select the target area for the alert
                         </h1>
                     </legend>
 
-					
-					
+		
 					<fieldset class="govuk-fieldset">
             <label class="govuk-label" for="targetArea">
               Use the area code to find a target area for flood alerts.						
             </label>
+
+          </br>
+
           <div class="govuk-form-group govuk-form-group--error">
             <span id="targetArea-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span>Check: 
@@ -72,6 +75,8 @@ Select the target area for the alert
           
             </span>
           </div>
+        </br>
+
           <input class="govuk-input govuk-input--error" id="target-area" name="target-area" value="{{ data['target-area'] }}" type="text" aria-describedby="targetArea-error">
 
 
