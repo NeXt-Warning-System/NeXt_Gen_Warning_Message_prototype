@@ -1,6 +1,6 @@
 
 {% extends "layout.html" %}
-{% set versionxxx = "v1" %}
+{% set versionxxx = "v2" %}
 
 {% block pageTitle %}
   NeXt Generation Warning System prototype
@@ -28,10 +28,10 @@
 
       <p><a href="/prototype-admin/clear-data">Clear permit data</a></p>
       <!-- user lab -->
-      <h2 class="govuk-heading-m">Version 1</h2>
+      <h2 class="govuk-heading-m">Version 2</h2>
 
-      <p class="govuk-body">This version covers selecting issue severity and a target area.</br>
-      <p class="govuk-body">Week starting 28 December 2020. <!--the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table further down the page--></p>
+      <p class="govuk-body">This version covers ...</br>
+      <p class="govuk-body">Week starting 8 February 2021. <!--the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table further down the page--></p>
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <!-- ########################################################################### -->
@@ -42,40 +42,50 @@
       
 
           <h3 class="govuk-heading-m">
-Select severity level         </h3>
+Story 1 </h3>
 <p style="font-weight: 600;">Split test option A:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="/{{versionxxx}}/severity/radio/select_severity_details" target="_blank">Radio select A</a> </li>
+  <li><a href="#" target="_blank">Option A</a> </li>
           
 </ul>
 <p style="font-weight: 600;">Split test option B:</p>
 
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/{{versionxxx}}/severity/radio/select_severity_details_icons" target="_blank">Radio select B</a> </li>
+            <li><a href="#" target="_blank">Option B</a> </li>
                     
           </ul>
         </br>
       </br>
     </br>
     <h3 class="govuk-heading-m">
-              Select target area         </h3>
+              Story 2        </h3>
               <p style="font-weight: 600;">Split test option A:</p>
 
                         <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/{{versionxxx}}/target-area/input" target="_blank">Input with validation</a> </li>
+            <li><a href="#" target="_blank">Option A</a> </li>
           </ul>
         </br>
           <p style="font-weight: 600;">Split test option B:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/{{versionxxx}}/target-area/autocomplete" target="_blank">Autocomplete</a> </li>
+            <li><a href="#" target="_blank">Option B</a> </li>
           </ul>
             </br>
-          </br>
-        </br>
+
           
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <!-- ########################################################################### -->
-  
+        <h2 class="govuk-heading-m">
+          Active prototype
+        </h2>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/{{versionxxx}}/target-area/autocomplete" target="_blank">Select target area</a> </li>
+            <li><a href="/{{versionxxx}}/severity/radio/select_severity_details" target="_blank">Select severity level</a> </li>    
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <!-- ########################################################################### -->
+</br>
               <h2 class="govuk-heading-m">
                 Archived research
               </h2>

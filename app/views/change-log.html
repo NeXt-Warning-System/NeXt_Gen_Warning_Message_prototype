@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prototype change log
+{% endblock %}
+
+<!--
+REGEXP replacements for google HTML
+ class="c[0-9][0-9]? ?c?[0-9][0-9]?"
+</?span>
+
+<h2 class="heading-large"   with  <h2 class="heading-large" class="heading-large"
+-->
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="govuk-heading-l">
+  Prototype change log
+  </h1>
+
+  <p>This summarises the main changes we've made in response to feedback.</p>
+  
+  <h2 class="govuk-heading-m">Version 1 to 2</h2>
+  <p><a href="index-v2">Version 2</a></p>
+
+
+  <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Summary of change in v2</th>
+          <th class="govuk-table__header govuk-!-width-one-half" scope="col">User need, reason or source</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-width-one-quarter" scope="row">...</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">...</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-width-one-quarter" scope="row">...</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">...</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+</main>
+
+{% endblock %}
