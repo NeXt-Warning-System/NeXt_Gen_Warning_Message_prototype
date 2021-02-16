@@ -84,4 +84,37 @@ router.post('/target-area/review-input', function (req, res) {
   }
 })
 
+
+// REGIONS ============
+router.get('/location/catigories', function (req, res) {
+  res.render(folder + '/location/catigories',{
+    "formAction":"/"+ folder + "/location/catigories-check"
+  })
+})
+
+router.post('/location/catigories', function (req, res) {
+  res.render(folder + '/location/catigories',{
+    "formAction":"/"+ folder + "/location/catigories-check"
+  })
+})
+
+
+// dirceting to regions
+router.post('/location/catigories-check', function (req, res) {
+  var region = req.body.region
+
+    if (req.session.data.chosenRegion==="Yorkshire") {
+      res.redirect("/"+ folder + "/location/regions/yorkshire")
+    } else if (req.session.data.chosenRegion==="Thames"){
+      res.redirect("/"+ folder + "/location/regions/thames")
+    } else if (req.session.data.chosenRegion==="West Midlands"){
+      res.redirect("/"+ folder + "/location/regions/west-midlands")
+    } else if (req.session.data.chosenRegion==="Wessex"){
+      res.redirect("/"+ folder + "/location/regions/wessex")
+    } else {
+      res.redirect("/"+ folder + "/check/task-list")
+    }
+})
+
+
 module.exports = router
