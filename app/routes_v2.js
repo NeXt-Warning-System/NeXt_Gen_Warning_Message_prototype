@@ -110,9 +110,29 @@ router.post('/location/catigories-check', function (req, res) {
     } else if (req.session.data.chosenRegion==="West Midlands"){
       res.redirect("/"+ folder + "/location/regions/west-midlands")
     } else if (req.session.data.chosenRegion==="Wessex"){
-      res.redirect("/"+ folder + "/location/regions/wessex")
+      res.redirect("/"+ folder + "/location/regions/wessex")    
+    } else if (req.session.data.chosenRegion==="Solent and South Downs"){
+        res.redirect("/"+ folder + "/location/regions/solent-south-downs")
+    } else if (req.session.data.chosenRegion==="North East"){
+        res.redirect("/"+ folder + "/location/regions/north-east")
+    } else if (req.session.data.chosenRegion==="Lincs and Northants"){
+          res.redirect("/"+ folder + "/location/regions/lincs-northants")
+    } else if (req.session.data.chosenRegion==="Kent S London and E Sussex"){
+          res.redirect("/"+ folder + "/location/regions/kent-s-london-e-sussex")
+    } else if (req.session.data.chosenRegion==="Herts and North London"){
+            res.redirect("/"+ folder + "/location/regions/herts-north-london")
+    } else if (req.session.data.chosenRegion==="Cumbria and Lancashire"){
+            res.redirect("/"+ folder + "/location/regions/cumbria-lancashire")
+    } else if (req.session.data.chosenRegion==="Devon and Cornwall"){
+            res.redirect("/"+ folder + "/location/regions/devon-cornwall")
+    } else if (req.session.data.chosenRegion==="East Anglia"){
+            res.redirect("/"+ folder + "/location/regions/east-anglia")
+    } else if (req.session.data.chosenRegion==="East Midlands"){
+            res.redirect("/"+ folder + "/location/regions/east-midlands")
+    } else if (req.session.data.chosenRegion==="Gtr Mancs Mersey and Ches"){
+            res.redirect("/"+ folder + "/location/regions/gtr-mancs-mersey-ches")
     } else {
-      res.redirect("/"+ folder + "/check/task-list")
+      res.redirect("/"+ folder + "/not-yet-built")
     }
 })
 
