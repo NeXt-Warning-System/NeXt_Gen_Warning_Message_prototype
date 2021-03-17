@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Find flood warning areas
+B1040 Thorney to Whittlesey Road to the South of the River Nene
 {% endblock %}
 
 {% set versionxxx = "v3" %}
@@ -34,24 +34,24 @@ Find flood warning areas
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-                          Find flood warning areas
-                        </h1>
+                          B1040 Thorney to Whittlesey Road to the South of the River Nene                        </h1>
                     </legend>
 
-					
-					
-					<fieldset class="govuk-fieldset">
-            <label class="govuk-label" for="find">
-              Enter a full postcode or place name for the location you would like to search.
-            </label>
-            <input class="govuk-input" id="locationFind" name="locationFind" type="text">
+                    {# permit|dump #}
 
-        </fieldset>
+                  <p>The lower Lee tributaries, including the Nazeing Brook, Ching Brook, Cobbins Brook, Pymmes Brook, Rags Brook, Salmons Brook, Turkey Brook, Trinity Marsh Ditch and the Small River Lee.</p>
+
 						
 
-					  </div>
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
-	                </fieldset>
+            </div>
+            <!--
+            {% if permit.taStatus=="added" %}
+            <button class="govuk-button" name="taStatus" value="removed" data-module="govuk-button">Remove from my flood warnings</button>
+            {% else %}
+            <button class="govuk-button" name="taStatus" value="added" data-module="govuk-button">Add to my flood warnings</button>
+              {% endif %}-->
+
+          </fieldset>
 
         </form>
 

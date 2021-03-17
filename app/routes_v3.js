@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-var folder = "v2"
+var folder = "v3"
 var servicename = "NeXt Generation Warning System"
 var paymentMethod = "govpay"  // or "govpay"
 
@@ -136,5 +136,27 @@ router.post('/location/catigories-check', function (req, res) {
     }
 })
 
+  // Choose alerts ==============================================================
 
+  router.get('/find-location/choose-alerts', function (req, res) {
+    res.render(folder+'/find-location/choose-alerts',{
+        "formAction":"/"+folder+"/find-location/choose-alerts-check"
+    })
+  })
+
+  router.post('/find-location/choose-alerts', function (req, res) {
+    res.render(folder+'/find-location/choose-alerts',{
+        "formAction":"/"+folder+"/find-location/choose-alerts-check"
+    })
+  })
+  
+  // Route to check if new application has started or is a renewal
+  router.post('/find-location/choose-alerts-check', function (req, res) {
+  
+    if (req.body['alertsChoose']=="yes") {
+      res.redirect("/"+folder+"/find-location/alerts")
+    } else {
+      res.redirect("/"+folder+"/find-location/review")
+    }
+  })
 module.exports = router

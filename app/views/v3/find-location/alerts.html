@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Find flood warning areas
+Select the target area for the alert
 {% endblock %}
 
 {% set versionxxx = "v3" %}
@@ -28,13 +28,13 @@ Find flood warning areas
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="warnings" method="post">
+      <form action="alert-areas" method="post">
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-                          Find flood warning areas
+                          Find flood alert areas
                         </h1>
                     </legend>
 
@@ -44,7 +44,7 @@ Find flood warning areas
             <label class="govuk-label" for="find">
               Enter a full postcode or place name for the location you would like to search.
             </label>
-            <input class="govuk-input" id="locationFind" name="locationFind" type="text">
+            <input class="govuk-input" id="locationFindalerts" name="locationFindalerts" type="text">
 
         </fieldset>
 						
