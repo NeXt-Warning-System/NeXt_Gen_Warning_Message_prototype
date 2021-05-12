@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 var folder = "v1"
-var servicename = "NeXt Generation Warning System"
+var servicename = "Get flood warnings"
 var paymentMethod = "govpay"  // or "govpay"
 
 
